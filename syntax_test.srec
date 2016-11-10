@@ -1,0 +1,27 @@
+# SYNTAX TEST "Packages/User/SREC/SREC.sublime-syntax"
+S0101234020002081060000AD060000AD0C3
+S1101234020002081060000AD060000AD0C3
+S2101234560002081060000AD060000AD0C3
+S3101234567802081060000AD060000AD0C3
+S5101234020002081060000AD060000AD0C3
+S6101234560002081060000AD060000AD0C3
+S7101234567802081060000AD060000AD0C3
+S8101234560002081060000AD060000AD0C3
+S9101234020002081060000AD060000AD0C3
+# <- source.srec srec.record punctuation.definition.record.begin
+# ^^ constant.numeric.record.byte-count
+#   ^^^^ entity.name.record.address
+#       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ variable.function.record.data
+#                                       ^^ comment.block.record.checksum
+
+S000000F
+#        ^^ comment.block.record.checksum
+
+S0100020AD06hi!0000AD060000AD06000004
+#           ^^^ invalid.illegal.character
+
+Hello, world
+# <- invalid.malformed-record
+
+S0123456789
+# <- source.srec

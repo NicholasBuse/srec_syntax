@@ -1,0 +1,39 @@
+%YAML 1.2
+---
+name: SREC
+file_extensions: [s19, s28, s37, s, s1, s2, s3, sx, srec, mot]
+scope: source.srec
+
+variables:
+  nible: '[a-fA-F\d]'
+
+contexts:
+  main:
+    - match: ^([sS][0159])({{nible}}{2})({{nible}}{4})({{nible}}*?)({{nible}}{2})$
+      scope: s0159.record
+      captures:
+        1: punctuation.definition.record.begin
+        2: constant.numeric.record.byte-count
+        3: entity.name.record.address
+        4: variable.function.record.data
+        5: comment.block.record.checksum
+    - match: ^([sS][268])({{nible}}{2})({{nible}}{6})({{nible}}*?)({{nible}}{2})$
+      scope: s268.record
+      captures:
+        1: punctuation.definition.record.begin
+        2: constant.numeric.record.byte-count
+        3: entity.name.record.address
+        4: variable.function.record.data
+        5: comment.block.record.checksum
+    - match: ^([sS][37])({{nible}}{2})({{nible}}{8})({{nible}}*?)({{nible}}{2})$
+      scope: s37.record
+      captures:
+        1: punctuation.definition.record.begin
+        2: constant.numeric.record.byte-count
+        3: entity.name.record.address
+        4: variable.function.record.data
+        5: comment.block.record.checksum
+    - match: '^[^sS]*'
+      scope: invalid.malformed-record
+    - match: '[^sSa-fA-F\d\n\r]'
+      scope: invalid.illegal.character
