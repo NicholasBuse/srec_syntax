@@ -1,5 +1,5 @@
-SREC HEX file format syntax definition
-=======================================
+SREC file format syntax definition
+==================================
 
 This is a [Sublime Text 3](https://www.sublimetext.com/3) syntax definition for
 the [SREC file format](https://en.wikipedia.org/wiki/SREC_(file_format)).
