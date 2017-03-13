@@ -14,7 +14,7 @@ contexts:
       captures:
         1: punctuation.definition.record.begin
         2: constant.numeric.record.byte-count
-        3: entity.name.record.address
+        3: entity.name.function.record.address
         4: variable.function.record.data
         5: comment.block.record.checksum
     - match: ^([sS][268])({{nible}}{2})({{nible}}{6})({{nible}}*?)({{nible}}{2})$
@@ -22,7 +22,7 @@ contexts:
       captures:
         1: punctuation.definition.record.begin
         2: constant.numeric.record.byte-count
-        3: entity.name.record.address
+        3: entity.name.function.record.address
         4: variable.function.record.data
         5: comment.block.record.checksum
     - match: ^([sS][37])({{nible}}{2})({{nible}}{8})({{nible}}*?)({{nible}}{2})$
@@ -30,7 +30,7 @@ contexts:
       captures:
         1: punctuation.definition.record.begin
         2: constant.numeric.record.byte-count
-        3: entity.name.record.address
+        3: entity.name.function.record.address
         4: variable.function.record.data
         5: comment.block.record.checksum
     - match: '^[^sS]*'
